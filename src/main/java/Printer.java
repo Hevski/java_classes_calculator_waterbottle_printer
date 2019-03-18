@@ -11,10 +11,11 @@ public class Printer {
         return paper;
     }
 
-    public void print(int pages, int copies){
-        if (this.paper >= pages * copies){
-          this.paper -= (copies * pages);
-          this.toner -= (copies * pages);
+    public void print(int pages, int copies) {
+        int totalPages = pages * copies;
+        if (this.paper >= totalPages && this.toner >= totalPages ){
+          this.paper -= totalPages;
+          this.toner -= totalPages;
         }
     }
 

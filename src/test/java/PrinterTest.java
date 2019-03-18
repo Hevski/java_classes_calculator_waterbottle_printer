@@ -24,6 +24,12 @@ public class PrinterTest {
     }
 
     @Test
+    public void cantPrintNotEnoughPaper(){
+        printer.print(10, 12);
+        assertEquals(100, printer.getPaper());
+    }
+
+    @Test
     public void canRefill(){
         printer.fill();
         assertEquals(100, printer.getPaper());
@@ -38,5 +44,11 @@ public class PrinterTest {
     public void canReduce(){
         printer.print(2,5);
         assertEquals(90, printer.getToner());
+    }
+
+    @Test
+    public void cantPrintNotEnoughToner(){
+        printer.print(10, 12);
+        assertEquals(100, printer.getToner() );
     }
 }
